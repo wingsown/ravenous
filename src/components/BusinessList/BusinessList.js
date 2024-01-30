@@ -1,3 +1,7 @@
+import React from 'react';
+import Business from '../Business/Business';
+
+
 function BusinessList(prop) {
     if(!prop.businesses) {
         return (
@@ -10,8 +14,10 @@ function BusinessList(prop) {
     return (
         <div id="business-list">
             {prop.businesses?.map(business => {
-                return "business component"
+                return <Business info={business} key={business.id}/>;
             })}
         </div>
     )
 }
+
+export default BusinessList;
